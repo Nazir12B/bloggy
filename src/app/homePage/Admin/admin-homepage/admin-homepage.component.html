@@ -1,0 +1,19 @@
+<h2 align="center" class="mt-4"> Administration Page </h2>
+<div class="mb-2 d-flex justify-content-end">
+<a style="border-radius: 0px !important;" class="btn btn-dark" (click)="creatPost()" >+ Create post</a>
+
+</div>
+<table align="center" border="1" class="mx-auto text-center table table-bordered ">
+  <tr><th>ID</th><th>Image</th><th>Title</th><th>Autor</th><th>Date</th><th>Action</th></tr>
+  <tr *ngFor="let post of posts">
+    <td>{{post.id}}</td>
+    <td><img [src]="post.image_url" style="height: 120px;"/></td>
+    <td>{{post.title}}</td>
+    <td>{{post.full_name}}</td>
+    <td>{{post.created_at | date:'dd/MM/yyyy' }}</td>
+    <td>
+      <img (click)="gotoUpdatePost(post.id)" src="../assets/edit-2.svg"/>
+      <img (click)="confirmBox(post)" src="../assets/trash-2.svg"/>
+    </td>
+
+</table>

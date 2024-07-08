@@ -1,0 +1,36 @@
+<h2 align="center" class="mt-4"> Create Post Page </h2>
+
+<form #createPostrForm="ngForm" class="m-4" (ngSubmit)="createPost(createPostrForm)">
+  <div class="form-group">
+    <label for="posttitle">Post title</label>
+    <input ngModel name="title" type="text" class="form-control" id="posttitle"  placeholder="Enter name" maxlength="64">
+  </div>
+
+
+  <div class="form-group">
+    <label for="postautor">Autor</label>
+    <select id="postautor" ngModel name="autor" type="number" class="form-select">
+      <option selected></option>
+      <option *ngFor="let user of users"  value={{user.id}}>{{user.full_name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="postimage">Image</label>
+    <input  ngModel name="image" type="text" class="form-control" id="postimage"  placeholder="Image URL">
+  </div>
+
+  <div class="form-group">
+    <label for="postresume">Post resume</label>
+    <textarea  ngModel name="resume" type="text" class="form-control" id="postresume"  placeholder="Resume"  maxlength="256"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="postcontent">Content</label>
+    <textarea  ngModel name="content" type="text" class="form-control" id="postcontent"  placeholder="Content" style="height: 150px;"></textarea>
+  </div>
+
+
+
+  <button type="submit" class="btn btn-dark mt-4">Submit</button>
+</form>

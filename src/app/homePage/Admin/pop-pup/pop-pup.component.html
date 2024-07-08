@@ -1,0 +1,13 @@
+<div>
+    <h3>'Warning! You have attempted to delete "{{dialogBelonging.customData.title}}"</h3>
+    <p class="text-center my-4">
+      Type the name of the item below and press the Ok button to continue or press Cancel to cancel the operation.
+    </p>
+    <span *ngIf="message!=''" [ngClass]="{'text-danger': hasError, 'text-primary': !hasError}">
+      {{message}}
+    </span>
+    <input [(ngModel)]="title" name="title" type="text" class="form-control" id="posttitle"  placeholder="Enter name">
+
+
+
+</div>

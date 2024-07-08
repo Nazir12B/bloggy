@@ -1,0 +1,20 @@
+<h2 class="text-center mt-4">Our latests post</h2>
+<!-- <div > -->
+  <div *ngFor="let post of posts" (click)="gotoPost(post.id)" class="col-md-10 col-sm-12 mx-auto d-flex border justify-content-between p-4 mt-5 bg-light">
+    <div class="d-flex ">
+      <div style="margin-right: 10px;">
+        <img [src]="post.image_url" style=" height: 175px; width: 150px;"/>
+      </div>
+      <div  class="d-flex flex-column justify-content-between">
+        <h4>{{post.title}}</h4>
+
+        <p>{{post.resume}}</p>
+
+        <a class="btn btn-dark " >Read more .......</a>
+
+      </div>
+    </div>
+    <div>{{post.created_at | date:'dd/MM/yyyy'}}</div>
+  </div>
+
+<!-- </div> -->
